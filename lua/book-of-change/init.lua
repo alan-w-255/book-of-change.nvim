@@ -1,6 +1,6 @@
 local M={}
 local ZHOUYI_LINE_COUNT = 957
-local ZHOUYI_TEXT_FILE = './data/zhouyi.txt'
+local zhouyi_text = require('book-of-change.zhouyi_text')
 
 local function random_seed()
     local dev_rand = io.open("/dev/urandom", 'r')
@@ -16,9 +16,7 @@ end
 function M.suan_ming()
     random_seed()
     local random_line = math.random(ZHOUYI_LINE_COUNT)
-    local handle = io.popen('sed -ne "'..random_line..' p" '.. ZHOUYI_TEXT_FILE, 'r')
-    local result = handle:read('*l')
-    handle:close()
+    local result = zhouyi_text[random_line]
     return result
 end
 
