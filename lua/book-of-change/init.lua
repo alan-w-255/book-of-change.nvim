@@ -1,6 +1,6 @@
 local M={}
-local ZHOUYI_LINE_COUNT = 957
 local zhouyi_text = require('book-of-change.zhouyi_text')
+local ZHOUYI_LINE_COUNT = #zhouyi_text
 
 local function random_seed()
     local dev_rand = io.open("/dev/urandom", 'r')
