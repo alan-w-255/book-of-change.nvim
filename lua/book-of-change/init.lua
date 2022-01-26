@@ -1,7 +1,7 @@
 local M={}
-local zhouyi_text = require('zhouyi_text')
+local zhouyi_text = require('book-of-change.zhouyi_text')
 local ZHOUYI_LINE_COUNT = #zhouyi_text
-local gua = require'gua'
+local gua = require'book-of-change.gua'
 
 local bagua = {'乾', '兑', '离', '震','巽','坎','艮', '坤'}
 
@@ -41,7 +41,7 @@ function M.suan_ming_by_date(year, month, day, hour)
         if type(v[1]) == "string" and string.match(v[1], guaxiang) then
             return {
                 v[1],
-                v[yao + 1],
+                v[yao + 1][1],
             }
         end
     end
