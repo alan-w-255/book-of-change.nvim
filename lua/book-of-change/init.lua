@@ -41,7 +41,8 @@ function M.suan_ming_by_date(year, month, day, hour)
         if type(v[1]) == "string" and string.match(v[1], guaxiang) then
             return {
                 v[1],
-                v[yao + 1][1],
+                v[2][1],
+                v[yao + 2][1],
             }
         end
     end
