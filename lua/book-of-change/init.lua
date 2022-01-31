@@ -17,15 +17,14 @@ function M.suan_ming_by_date(year, month, day, hour)
         yao = 6
     end
     local guaxiang = bagua[upGua] .. '上' .. bagua[downGua] .. '下'
-    for _, v in ipairs(gua) do
-        if type(v[1]) == "string" and string.match(v[1], guaxiang) then
-            return {
-                v[1],
-                v[2][1],
-                v[yao + 2][1],
-            }
-        end
-    end
+    local v = gua[guaxiang]
+    print(guaxiang)
+    print(v)
+    return {
+        v[1],
+        v[2][1],
+        v[yao + 2][1],
+    }
 end
 
 return M
