@@ -18,8 +18,6 @@ function M.suan_ming_by_date(year, month, day, hour)
     end
     local guaxiang = bagua[upGua] .. '上' .. bagua[downGua] .. '下'
     local v = gua[guaxiang]
-    print(guaxiang)
-    print(v)
     return {
         v[1],
         v[2][1],
